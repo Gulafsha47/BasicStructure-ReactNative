@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 
-class Cat extends Component {
-  render() {
-    return (
-      <View>
-        <Text>Hello, I am your cat!</Text>
-      </View>
-    );
+const App = () => {
+  function login() {
+    alert('Login function');
   }
-}
+  return (
+    <View>
+      <Text style={{fontSize: 40}}> Function Component</Text>
+      <Button title="login" onPress={login} />
+    </View>
+  );
+};
 
-export default Cat;
+export default App;
