@@ -1,12 +1,14 @@
-import React from 'react';
-import {Text, View} from 'react-native';
-import login from './components/Login';
+import React, {Component} from 'react';
+import {View, Text} from 'react-native';
 
-const App = () => {
-  return (
-    <View>
-      <Text> Welcome to the react native </Text>
-    </View>
-  );
-};
-export default App;
+class Cat extends Component {
+  render() {
+    return (
+      <View>
+        <Text>Hello, I am your cat!</Text>
+      </View>
+    );
+  }
+}
+
+export default Cat;
