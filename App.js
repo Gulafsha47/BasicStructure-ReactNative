@@ -7,7 +7,7 @@ const App = () => {
   }
   return (
     <View>
-      <Text style={{fontSize: 40}}> Function Component</Text>
+      <Text style={{fontSize: 50}}> Function Component</Text>
       <Button title="login" onPress={login} />
     </View>
   );
