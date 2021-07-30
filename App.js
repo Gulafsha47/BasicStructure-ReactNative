@@ -1,15 +1,10 @@
-import React, {Component} from 'react';
-import {View, Text, Button} from 'react-native';
+import React from 'react';
+import {View, Text} from 'react-native';
 
 const App = () => {
-  function login() {
-    alert('Login function');
-  }
   return (
     <View>
-      <Text> Hello</Text>
-      {/* <Text style={{fontSize: 50}}> Function Component</Text> */}
-      <Button title="login" onPress={login} />
+      <Text> Welcome to the react-native world</Text>
     </View>
   );
 };
