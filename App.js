@@ -1,12 +1,20 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Text, View} from 'react-native';
 
-const ReactNativeApp = () => {
+const Greeting = props => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text> Welcome to the react-native world</Text>
+    <View style={{alignItems: 'center'}}>
+      <Text>Hello{props.name}!</Text>
     </View>
   );
 };
 
-export default App;
+export default App = () => {
+  return (
+    <View style={{alignItems: 'center', top: 50}}>
+      <Greeting name="Hello" />
+      <Greeting name="Gulafsha" />
+      <Greeting name="Khanam" />
+    </View>
+  );
+};
