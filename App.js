@@ -1,15 +1,30 @@
 import React from 'react';
-import {Text, TextInput, View} from 'react-native';
-const cat = () => {
+import {StyleSheet, Text, View} from 'react-native';
+
+const LotsOfStyles = () => {
   return (
-    <View>
-      <Text>custom components</Text>
-      <TextInput
-        STYLES={{height: 48, borderColor: 'red', borderWidth: 1}}
-        defaultValue="Name me!"
-      />
+    <View style={styles.container}>
+      <Text style={styles.red}>just red</Text>
+      <Text style={styles.bigBlue}>just bigBlue</Text>
+      <Text style={[styles.bigBlue, styles.red]}>bigBlue, then red</Text>
+      <Text style={[styles.red, styles.bigBlue]}>red, then bigBlue</Text>
     </View>
   );
 };
 
-export default cat;
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 50,
+  },
+  bigBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+    justifyContent: 'center',
+  },
+  red: {
+    color: 'red',
+  },
+});
+
+export default LotsOfStyles;
