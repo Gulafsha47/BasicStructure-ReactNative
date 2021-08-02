@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
     color: 'blue',
     fontWeight: 'bold',
     fontSize: 30,
-    justifyContent: 'center',
   },
   red: {
     color: 'red',
