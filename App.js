@@ -1,20 +1,15 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-
-const Greeting = props => {
+import {Text, TextInput, View} from 'react-native';
+const cat = () => {
   return (
-    <View style={{alignItems: 'center'}}>
-      <Text>Hello{props.name}!</Text>
+    <View>
+      <Text>custom components</Text>
+      <TextInput
+        STYLES={{height: 48, borderColor: 'red', borderWidth: 1}}
+        defaultValue="Name me!"
+      />
     </View>
   );
 };
 
-export default App = () => {
-  return (
-    <View style={{alignItems: 'center', top: 50}}>
-      <Greeting name="Hello" />
-      <Greeting name="Gulafsha" />
-      <Greeting name="Khanam" />
-    </View>
-  );
-};
+export default cat;
