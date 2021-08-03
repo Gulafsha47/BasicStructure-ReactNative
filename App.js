@@ -1,29 +1,28 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const LotsOfStyles = () => {
+const Flex = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.red}>just red</Text>
-      <Text style={styles.bigBlue}>just bigBlue</Text>
-      <Text style={[styles.bigBlue, styles.red]}>bigBlue, then red</Text>
-      <Text style={[styles.red, styles.bigBlue]}>red, then bigBlue</Text>
+    <View
+      style={[
+        styles.container,
+        {
+          // Try setting `flexDirection` to `"row"`.
+          flexDirection: 'column',
+        },
+      ]}>
+      <View style={{flex: 1, backgroundColor: 'yellow'}} />
+      <View style={{flex: 2, backgroundColor: 'orange'}} />
+      <View style={{flex: 3, backgroundColor: 'pink'}} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
-  },
-  bigBlue: {
-    color: 'blue',
-    fontWeight: 'bold',
-    fontSize: 30,
-  },
-  red: {
-    color: 'red',
+    flex: 1,
+    padding: 20,
   },
 });
 
-export default LotsOfStyles;
+export default Flex;
