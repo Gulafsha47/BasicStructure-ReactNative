@@ -1,28 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-
-const Flex = () => {
+import {View} from 'react-native';
+const FixedDimensionBasics = () => {
   return (
-    <View
-      style={[
-        styles.container,
-        {
-          // Try setting `flexDirection` to `"row"`.
-          flexDirection: 'column',
-        },
-      ]}>
-      <View style={{flex: 1, backgroundColor: 'yellow'}} />
-      <View style={{flex: 2, backgroundColor: 'orange'}} />
-      <View style={{flex: 3, backgroundColor: 'pink'}} />
+    <View>
+      <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+      <View style={{width: 100, height: 100, backgroundColor: 'skyblue'}} />
+      <View style={{width: 150, height: 150, backgroundColor: 'steelblue'}} />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-  },
-});
-
-export default Flex;
+export default FixedDimensionBasics;
