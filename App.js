@@ -1,31 +1,16 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet, TextInput, Button} from 'react-native';
 
 const App = () => {
   return (
-    <View style={{height: '100%'}}>
-      <View
-        style={{
-          height: '10%',
-          backgroundColor: 'powderblue',
-        }}
-      />
-
-      <View
-        style={{
-          width: '60%',
-          height: '20%',
-          backgroundColor: 'skyblue',
-        }}
-      />
-
-      <View
-        style={{
-          width: '30%',
-          height: '20%',
-          backgroundColor: 'steelblue',
-        }}
-      />
+    <View style={{padding: 30}}>
+      <View>
+        <TextInput
+          placeholder="course goal"
+          style={{borderColor: 'black', borderWidth: 1}}
+        />
+        <Button title="Add" />
+      </View>
     </View>
   );
 };
