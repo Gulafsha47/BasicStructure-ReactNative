@@ -1,13 +1,32 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 
-const FlexDimensionBasics = () => {
+const App = () => {
   return (
-    <View style={{flex: 1}}>
-      <View style={{flex: 1, backgroundColor: 'powderblue'}} />
-      <View style={{flex: 2, backgroundColor: 'skyblue'}} />
-      <View style={{flex: 3, backgroundColor: 'steelblue'}} />
+    <View style={{height: '100%'}}>
+      <View
+        style={{
+          height: '10%',
+          backgroundColor: 'powderblue',
+        }}
+      />
+
+      <View
+        style={{
+          width: '60%',
+          height: '20%',
+          backgroundColor: 'skyblue',
+        }}
+      />
+
+      <View
+        style={{
+          width: '30%',
+          height: '20%',
+          backgroundColor: 'steelblue',
+        }}
+      />
     </View>
   );
 };
-export default FlexDimensionBasics;
+export default App;
