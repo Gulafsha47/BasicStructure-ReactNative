@@ -1,61 +1,38 @@
-import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput, Button} from 'react-native';
-
-const App = () => {
-  const [enteredGoal, setEnteredGoal] = useState('');
-  const [courseGoals, setCourseGoal] = useState([]);
-  const goalInputHandler = enteredText => {
-    setEnteredGoal(enteredText);
-  };
-
-  const addGoalHandler = () => {
-    setCourseGoal(currentGoal => [...courseGoals, enteredGoal]);
-  };
-  return (
-    <View style={Styles.screen}>
-      <View style={Styles.inputContainer}>
-        <View>
-          <TextInput
-            placeholder="course goal"
-            style={Styles.input}
-            onChangeText={goalInputHandler}
-            value={enteredGoal}
-          />
-          <Button title="Add" onPress={addGoalHandler} />
-        </View>
-      </View>
-      <View>
-        {courseGoals.map(goal => (
-          <View Key={goal} Style={Styles.listItem}>
-            <Text>{goal}</Text>
-          </View>
-        ))}
-      </View>
-    </View>
-  );
+import React from 'react';
+import {Image, ScrollView, Text} from 'react-native';
+const logo = {
+  uri: 'https://reactnative.dev/img/tiny_logo.png',
+  width: 50,
+  height: 50,
 };
+const App = () => (
+  <ScrollView>
+    <Text style={{fontSize: 40}}>scroll me </Text>
 
-const Styles = StyleSheet.create({
-  screen: {
-    padding: 50,
-  },
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
 
-  inputContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  input: {
-    borderColor: 'black',
-    borderWidth: 1,
-  },
+    <Text style={{fontSize: 40}}>If You Like</Text>
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
 
-  listItem: {
-    padding: 10,
-    backgroundColor: 'yellow',
-    marginVertical: 10,
-    borderColor: 'black',
-    borderWidth: 1,
-  },
-});
+    <Text style={{fontSize: 80}}>scroll me down</Text>
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+
+    <Text style={{fontSize: 50}}>Welcome to the react-native</Text>
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+  </ScrollView>
+);
 export default App;
