@@ -1,38 +1,21 @@
-import React from 'react';
-import {Image, ScrollView, Text} from 'react-native';
-const logo = {
-  uri: 'https://reactnative.dev/img/tiny_logo.png',
-  width: 50,
-  height: 50,
-};
-const App = () => (
-  <ScrollView>
-    <Text style={{fontSize: 40}}>scroll me </Text>
-
-    <Image source={logo} />
-    <Image source={logo} />
-    <Image source={logo} />
-
-    <Text style={{fontSize: 40}}>If You Like</Text>
-    <Image source={logo} />
-    <Image source={logo} />
-    <Image source={logo} />
-    <Image source={logo} />
-    <Image source={logo} />
-
-    <Text style={{fontSize: 80}}>scroll me down</Text>
-    <Image source={logo} />
-    <Image source={logo} />
-    <Image source={logo} />
-    <Image source={logo} />
-    <Image source={logo} />
-
-    <Text style={{fontSize: 50}}>Welcome to the react-native</Text>
-    <Image source={logo} />
-    <Image source={logo} />
-    <Image source={logo} />
-    <Image source={logo} />
-    <Image source={logo} />
-  </ScrollView>
-);
-export default App;
+import React, {Component} from 'react';
+import {View, ImageBackground, Image} from 'react-native';
+var bg = require('./background.png');
+var logo = require('./logo.png');
+export default class Splash extends Component {
+  constructor(props) {
+    super(props);
+    setTimeout(() => {
+      this.props.navigation.navigate('Login');
+    }, 5000);
+  }
+  render() {
+    return (
+      <ImageBackground source={bg} style={{height: '100%', width: '100%'}}>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <Image source={logo} style={{width: 100, height: 100}}></Image>
+        </View>
+      </ImageBackground>
+    );
+  }
+}
