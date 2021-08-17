@@ -1,21 +1,54 @@
 import React, {Component} from 'react';
-import {View, ImageBackground, Image} from 'react-native';
-var bg = require('./background.png');
-var logo = require('./logo.png');
-export default class Splash extends Component {
+import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+
+class App extends Component {
   constructor(props) {
     super(props);
-    setTimeout(() => {
-      this.props.navigation.navigate('Login');
-    }, 5000);
+    this.state = {count: 0};
   }
+
+  onPress = () => {
+    this.setState({
+      count: this.state.count + 1,
+    });
+  };
+
   render() {
     return (
-      <ImageBackground source={bg} style={{height: '100%', width: '100%'}}>
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          <Image source={logo} style={{width: 100, height: 100}}></Image>
+      <View style={styles.container}>
+        <TouchableHighlight onPress={this.onPress}>
+          <View style={styles.button}>
+            <Text>Touch Here</Text>
+          </View>
+        </TouchableHighlight>
+        <View style={[styles.countContainer]}>
+          <Text style={[styles.countText]}>
+            {this.state.count ? this.state.count : null}
+          </Text>
         </View>
-      </ImageBackground>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#cb9ca1',
+    padding: 10,
+  },
+  countContainer: {
+    alignItems: 'center',
+    padding: 10,
+  },
+  countText: {
+    color: '#FF00FF',
+  },
+});
+
+export default App;
