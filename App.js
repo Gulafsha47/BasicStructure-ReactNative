@@ -1,54 +1,50 @@
-import React, {Component} from 'react';
-import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {count: 0};
-  }
+export default function App() {
+  const [enteredGoal, setEnteredGoal] = useState('');
+  const [courseGoals, setCourseGoals] = useState([]);
 
-  onPress = () => {
-    this.setState({
-      count: this.state.count + 1,
-    });
+  const goalInputHandler = (enteredText) => {
+    setEnteredGoal(enteredText);
   };
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <TouchableHighlight onPress={this.onPress}>
-          <View style={styles.button}>
-            <Text>Touch Here</Text>
-          </View>
-        </TouchableHighlight>
-        <View style={[styles.countContainer]}>
-          <Text style={[styles.countText]}>
-            {this.state.count ? this.state.count : null}
-          </Text>
-        </View>
+  const addGoalHandler = () => {
+    console.log(enteredGoal);
+  };
+
+  return (
+    <View style={styles.screen}>
+      <View style={styles.inputContainer}>
+        <TextInput
+          placeholder="Course Goal"
+          style={styles.input}
+          onChangeText={goalInputHandler}
+          value={enteredGoal}
+        />
+        <Button title="ADD" onPress={addGoalHandler} />
       </View>
-    );
-  }
+      <View />
+      <View>
+        {courseGoals.map((goal) => <Text>{goal}</Text>)}
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 10,
+  screen: {
+    padding: 50
   },
-  button: {
-    alignItems: 'center',
-    backgroundColor: '#cb9ca1',
-    padding: 10,
+  inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
-  countContainer: {
-    alignItems: 'center',
-    padding: 10,
-  },
-  countText: {
-    color: '#FF00FF',
-  },
+  input: {
+    width: '80%',
+    borderColor: 'black',
+    borderWidth: 1,
+    padding: 10
+  }
 });
-
-export default App;
